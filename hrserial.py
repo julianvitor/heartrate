@@ -2,7 +2,6 @@
 import serial
 
 #porta serial do Arduino 
-
 #SERIAL_PORT = '/dev/ttyACM0'  # ou 'COMX' no Windows
 #BAUD_RATE = 9600
 

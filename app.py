@@ -16,8 +16,8 @@ app = Flask(__name__)
 @app.route('/')
 def index():
  
-    heart_rate = hrcapture()
-   # heart_rate = random.randrange(1, 301)
+    #heart_rate = hrcapture()
+    heart_rate = random.randrange(1, 301)
     return render_template('index.html', heart_rate=heart_rate)
 
 if __name__ == '__main__':
