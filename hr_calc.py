@@ -1,14 +1,14 @@
 #-*- coding: utf-8 -*-
-from serial_input import serialinput
+from serial_input import serial_input
 import time
 
-def tensao_para_hr(ponto_alto = 4500, ponto_baixo = 2500, max_leituras = 100):
+def hr_calc(ponto_alto = 4500, ponto_baixo = 2500, max_leituras = 150):
     picos = 0
     ciclos_completos = 0
     tempo_inicial = time.time()  # Registra o tempo inicial
 
     for leituras in range(max_leituras):
-        tensao_atual = serialinput()  # Supõe que a função serialinput() fornece o valor de tensão atual
+        tensao_atual = serial_input()  # Supõe que a função serial_input() fornece o valor de tensão atual
 
         if tensao_atual >= ponto_alto:
             picos += 1
@@ -40,5 +40,5 @@ def tensao_para_hr(ponto_alto = 4500, ponto_baixo = 2500, max_leituras = 100):
 # max_leituras = 50  # Número máximo de leituras da tensão
 
 
-# frequencia_cardiaca = tensao_para_hr(ponto_alto, ponto_baixo, max_leituras)
+# frequencia_cardiaca = hr_calc(ponto_alto, ponto_baixo, max_leituras)
 # print("Frequência cardíaca:", frequencia_cardiaca, "bpm", )

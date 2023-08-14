@@ -1,16 +1,19 @@
 #-*- coding: utf-8 -*-
 from flask import Flask, render_template
 import random
-from hr_calc import tensao_para_hr
+from hr_calc import hr_calc
+from gerar_grafico import gerar_grafico
 
 app = Flask(__name__)
+
+
 
 # Rota para exibir a página web com o valor da frequência cardíaca
 @app.route('/')
 def index():
- 
-    heart_rate = tensao_para_hr()
     
+    gerar_grafico(5)
+    heart_rate = hr_calc()
     #heart_rate = random.randrange(40, 220)
     
     return render_template('index.html', heart_rate=heart_rate)
