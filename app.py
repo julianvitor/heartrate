@@ -12,7 +12,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     
-    gerar_grafico(5)
+    gerar_grafico(4)
     heart_rate = hr_calc()
     #heart_rate = random.randrange(40, 220)
     

@@ -4,26 +4,29 @@ body {
     text-align: center;
     margin: 0;
     padding: 50px;
+    position: relative; /* Adiciona posição relativa ao body */
 }
 
 h1 {
     color: #7d7d7d;
 }
 
-
 p {
     font-size: 18px;
     color: #7d7d7d;
+    margin-bottom: 20px; /* Adiciona espaço abaixo do parágrafo */
 }
-  
+
 .pulse {
-    position: absolute;
-    top: 25%; /* Posiciona o .pulse abaixo do conteúdo */
+    /* Estilos do pulse */
+    position: relative; /* Altera a posição para relativa */
+    top: auto; /* Remove o valor anterior de top */
     left: 50%;
     transform: translateX(-50%);
-    width: 200px; /* Definimos uma largura fixa para o .pulse */
-    height: 100px; /* Definimos uma altura fixa para o .pulse */
-    margin-top: 5px; /* Adiciona um espaço de 100 pixels abaixo do texto */
+    width: 200px;
+    height: 100px;
+    margin-top: 20px; /* Aumenta o espaço acima do .pulse */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do .pulse */
 }
 
 .pulse:after {
@@ -42,7 +45,7 @@ p {
     width: 100%;
     border-collapse: collapse;
     background-color: #5a5a5a;
-    margin-top: 80px; /* Adiciona espaço acima da tabela */
+    margin-top: 80px;
 }
 
 /* Estilo para as células de cabeçalho (th) */
@@ -66,20 +69,25 @@ p {
     background-color: #5a5a5a;
 }
 
+/* Estilo para a imagem */
+.grafico-img {
+    max-width: 50%;
+    display: block;
+    margin: 100px auto;
+}
 
-  #downloadButton {
+#downloadButton {
     position: absolute;
-    bottom: 0;
+    bottom: 10px; /* Posiciona o botão 10px acima do limite inferior do body */
     left: 50%;
     transform: translateX(-50%);
-    margin: 10px;
-    padding: 10px 20px;
+    padding: 15px 30px;
     background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-}
+}   
 
   @-webkit-keyframes pulse {
     0% {
