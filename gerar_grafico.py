@@ -1,11 +1,14 @@
 #-*- coding: utf-8 -*-
 import os
 import time
+import matplotlib
+matplotlib.use('Agg')  # Configura o modo 'Agg' para renderização sem GUI
 import matplotlib.pyplot as plt
 from serial_input import serial_input
 
+plt.style.use('dark_background') #estilo
+
 # Função para criar e salvar o gráfico como imagem PNG
-plt.style.use('dark_background')
 def gerar_grafico(tempo_rodando = 5):
     tempo_inicial = time.time()
     tempos = []
@@ -29,10 +32,11 @@ def gerar_grafico(tempo_rodando = 5):
     plt.ylabel('Tensão (V)')
     plt.title('Gráfico de Tensão em Função do Tempo')
     plt.grid()
-
+    
+    #caminho para exibir no html
     nome_arquivo = 'grafico_tensao.png'
     caminho_static = os.path.join(os.path.dirname(__file__), 'static')
     caminho_salvar = os.path.join(caminho_static, nome_arquivo)
 
     plt.savefig(caminho_salvar, dpi=300, bbox_inches='tight', format='png')
-
+    plt.clf() #limpa a figura para evitar sobreprosição
