@@ -5,7 +5,7 @@ import random
 
 app = Flask(__name__)
 
-# Configuração da porta serial do Arduino (ajuste de acordo com a sua configuração)
+# Configuração da porta serial do Arduino 
 
 #SERIAL_PORT = '/dev/ttyACM0'  # ou 'COMX' no Windows
 #BAUD_RATE = 9600
@@ -22,4 +22,4 @@ def index():
     return render_template('index.html', heart_rate=heart_rate)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8080, debug=True)
